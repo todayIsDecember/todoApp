@@ -1,0 +1,120 @@
+.form {
+  width: 400px;
+  background-color: #1a1a1a;
+  border-radius: 25px;
+  box-shadow: 0px 0px 35px var(--black);
+  padding: 30px;
+  display: grid;
+  gap: 40px 20px;
+  /* justify-items: center; */
+  letter-spacing: 0.1em;
+  grid-template-columns: 20px auto 1fr;
+  grid-template-areas:
+  "login login login"
+  "avatar avatar avatar"
+  "emailIcon email email"
+  "userIcon name name"
+  "passwordIcon password password"
+  "btn btn btn";
+  overflow: hidden;
+  margin: 20px 0px;
+}
+
+.title {
+  grid-area: login;
+  font-size: 2rem;
+  margin: 15px;
+  background: var(--background-text);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  justify-self: center;
+}
+.name {
+  grid-area: name;
+}
+
+.emailIcon {
+  grid-area: emailIcon;
+  fill: var(--primary)
+}
+
+.userIcon {
+  grid-area: userIcon;
+  fill: var(--primary)
+}
+
+.avatar {
+  grid-area: avatar;
+  justify-self: center;
+}
+
+
+
+
+.passwordIcon {
+  grid-area: passwordIcon;
+  fill: var(--primary)
+}
+
+.inputGroup {
+  font-size: 1.3rem;
+  position: relative;
+}
+
+.email {
+  grid-area: email;
+}
+
+.pas {
+  grid-area: password;
+}
+
+.btn {
+  grid-area: btn;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  justify-self: center;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.label {
+  position: absolute;
+  top: -0.6rem;
+  left: 0.5rem;
+  color: var(--grey);
+  pointer-events: none;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.helper {
+  color: var(--white);
+  grid-area: s;
+  justify-self: center;
+  font-size: 0.8rem;
+}
+
+.helperChild {
+  background: var(--background-text);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.alert {
+  position: fixed;
+  top: 80px;
+  right: 10px;
+}
+
+@media (max-width: 550px) {
+  .form {
+    width: 250px;
+  }
+}
+
+@media (max-width: 410px) {
+  .form {
+    width: 200px;
+  }
+}

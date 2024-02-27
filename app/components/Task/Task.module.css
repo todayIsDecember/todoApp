@@ -1,0 +1,96 @@
+.task {
+  background: var(--black);
+  border-radius: 15px;
+  padding: 20px;
+  letter-spacing: 0.1em;
+  box-shadow: 9px 7px 20px var(--black);
+  display: grid;
+  grid-template-columns: 70px auto 1fr 20px;
+  gap: 8px;
+  align-items: flex-start;
+  /* width: 100%; */
+  grid-template-areas:
+  "avatar user created flag"
+  "title title title title";
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.user {
+  grid-area: user;
+  font-size: 10px;
+  color: var(--white);
+  margin: 0;
+}
+
+.title {
+  grid-area: title;
+  justify-self: center;
+  background: var(--background-text);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  font-size: 12px;
+}
+
+.created {
+  grid-area: created;
+  color: rgb(143, 142, 142);
+  font-size: 8px;
+  margin: 0;
+}
+
+.imgContainer {
+  position: relative;
+  grid-area: avatar;
+  border-radius: 50%;
+  height: 70px;
+}
+
+.img {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.flag {
+  grid-area: flag;
+  width: 20px;
+}
+
+.privateFlag {
+  fill: var(--red)
+}
+
+.noActive {
+  position: relative;
+  opacity: 0.6;
+}
+
+@media (max-width:600px) {
+  .task {
+    grid-template-columns: 30px auto 1fr auto;
+    padding: 10px;
+  }
+
+  .user {
+    font-size: 6px;
+  }
+
+  .title {
+    font-size: 8px;
+  }
+
+  .created {
+    font-size: 4px;
+  }
+
+  .img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .flag {
+    width: 10px;
+  }
+}

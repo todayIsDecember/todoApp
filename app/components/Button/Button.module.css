@@ -1,0 +1,65 @@
+.button {
+  position: relative;
+  text-transform: capitalize;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.btnForm {
+  font-weight: 400;
+  border-radius: 25px;
+  background: var(--background-text);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid var(--primary);
+  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btnForm:hover {
+  transform: scale(1.05);
+}
+
+.btnMain {
+  background-color: var(--black);
+  border: none;
+  border-radius: 20px;
+  color: var(--white);
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btnMain .arrow {
+  fill: var(--white);
+}
+
+.btnMain:hover {
+  transform: scale(1.1);
+}
+
+.arrow {
+  margin-left: 10px;
+  fill: var(--primary);
+}
+
+.default {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.default .arrow {
+  display: none;
+}
+
+.isActive {
+  transition: 0.5s ease;
+  background: var(--primary);
+}
+
+.isActive .arrow {
+  transition: 0.5s ease;
+  transform: rotate(90deg);
+}

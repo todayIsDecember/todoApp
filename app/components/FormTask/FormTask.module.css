@@ -1,0 +1,53 @@
+.form {
+  /* backdrop-filter: blur(100px); */
+  /* border: 1px solid var(--white); */
+  background: var(--black);
+  border-radius: 15px;
+  padding: 20px;
+  letter-spacing: 0.1em;
+  box-shadow: 9px 7px 20px var(--black);
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 20px;
+  grid-template-areas:
+  "formTitle formTitle formTitle"
+  "title title title"
+  "private private btn";
+}
+
+.formTitle {
+  grid-area: formTitle;
+  justify-self: center;
+  font-size: 22px;
+  background: var(--background-text);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.title {
+  grid-area: title;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.title:is(:focus, :valid) {
+  border-bottom: 1px solid var(--primary);
+}
+
+.btn {
+  grid-area: btn;
+}
+
+.checkPrivate {
+  grid-area: private;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.checkbox {
+  color: var(--primary);
+  font-size: 12px;
+}

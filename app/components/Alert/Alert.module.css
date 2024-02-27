@@ -1,0 +1,19 @@
+.alert {
+  width: auto;
+  height: auto;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: var(--black);
+  box-shadow: 5px 5px 20px var(--black);
+}
+
+.success {
+  border: 2px solid rgb(136, 240, 136);
+  color: rgb(137, 228, 137);
+}
+
+.bad {
+  border: 2px solid rgb(209, 113, 113);
+  color: rgb(241, 109, 109);
+}

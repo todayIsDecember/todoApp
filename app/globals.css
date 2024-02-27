@@ -1,0 +1,18 @@
+:root {
+  --background: linear-gradient(45deg, rgba(102,123,195,1) 0%, rgba(177,222,158,1) 100%);
+  --background-text: -webkit-linear-gradient(45deg, rgba(102,123,195,1) 0%, rgba(177,222,158,1) 100%);
+  --black: #1a1a1a;
+  --white: #fefefe;
+  --grey: #d4d4d4;
+  --primary: rgba(177,222,158,1);
+  --red: rgb(255, 110, 110);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+}
