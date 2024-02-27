@@ -1,17 +1,17 @@
 .task {
   background: var(--black);
   border-radius: 15px;
-  padding: 20px;
+  padding: 13px;
   letter-spacing: 0.1em;
-  box-shadow: 9px 7px 20px var(--black);
+  /* box-shadow: 9px 7px 20px var(--black); */
   display: grid;
-  grid-template-columns: 70px auto 1fr 20px;
+  grid-template-columns: 50px auto 1fr 10px;
   gap: 8px;
   align-items: flex-start;
   /* width: 100%; */
   grid-template-areas:
   "avatar user created flag"
-  "title title title title";
+  "avatar title title title";
   transition: 0.5s ease;
   cursor: pointer;
 }
@@ -30,13 +30,13 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .created {
   grid-area: created;
   color: rgb(143, 142, 142);
-  font-size: 8px;
+  font-size: 6px;
   margin: 0;
 }
 
@@ -44,7 +44,7 @@
   position: relative;
   grid-area: avatar;
   border-radius: 50%;
-  height: 70px;
+  height: 50px;
 }
 
 .img {
@@ -55,16 +55,11 @@
 
 .flag {
   grid-area: flag;
-  width: 20px;
+  width: 10px;
 }
 
 .privateFlag {
   fill: var(--red)
-}
-
-.noActive {
-  position: relative;
-  opacity: 0.6;
 }
 
 @media (max-width:600px) {

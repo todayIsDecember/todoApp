@@ -1,9 +1,9 @@
 .button {
   position: relative;
   text-transform: capitalize;
-  font-size: 1rem;
+  font-size: 10px;
   letter-spacing: 0.1em;
-  padding: 10px 30px;
+  padding: 10px 15px;
   cursor: pointer;
 }
 
@@ -24,7 +24,7 @@
 .btnMain {
   background-color: var(--black);
   border: none;
-  border-radius: 20px;
+  border-radius: 8px;
   color: var(--white);
   transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -34,7 +34,7 @@
 }
 
 .btnMain:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .arrow {

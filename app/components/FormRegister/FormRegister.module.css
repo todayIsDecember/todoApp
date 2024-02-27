@@ -1,11 +1,11 @@
 .form {
-  width: 400px;
+  width: 300px;
   background-color: #1a1a1a;
   border-radius: 25px;
   box-shadow: 0px 0px 35px var(--black);
   padding: 30px;
   display: grid;
-  gap: 40px 20px;
+  gap: 30px 20px;
   /* justify-items: center; */
   letter-spacing: 0.1em;
   grid-template-columns: 20px auto 1fr;
@@ -22,7 +22,7 @@
 
 .title {
   grid-area: login;
-  font-size: 2rem;
+  font-size: 18px;
   margin: 15px;
   background: var(--background-text);
   background-clip: text;
@@ -57,7 +57,7 @@
 }
 
 .inputGroup {
-  font-size: 1.3rem;
+  font-size: 12px;
   position: relative;
 }
 
@@ -81,7 +81,7 @@
 
 .label {
   position: absolute;
-  top: -0.6rem;
+  top: -0.2rem;
   left: 0.5rem;
   color: var(--grey);
   pointer-events: none;

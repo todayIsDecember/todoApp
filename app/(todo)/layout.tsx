@@ -6,7 +6,7 @@ import { Header } from "../components/Header/Header";
 import { Footer } from "../components";
 
 export const metadata: Metadata = {
-  title: "Todo App",
+  title: "Список справ",
   description: "Create by NextJs",
 };
 

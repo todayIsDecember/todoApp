@@ -5,6 +5,7 @@ export const API = {
   },
   task: {
     getAll: `${process.env.NEXT_PUBLIC_DOMAIN}/api/task/getAll`,
+    create: `${process.env.NEXT_PUBLIC_DOMAIN}/api/task/create`,
   },
   files: {
     uploadImage: `${process.env.NEXT_PUBLIC_DOMAIN}/api/files/upload`,

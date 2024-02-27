@@ -49,7 +49,7 @@ export const FormLogin = ({values, className, ...props}: FormLoginProps): JSX.El
         transition={{ease: "easeOut", duration: 0.7}}
         animate={{opacity: 1}}
       >
-        <p className={styles.title}>Login</p>
+        <p className={styles.title}>Авторизація</p>
         <EmailIcon className={styles.emailIcon}/>
         <div className={cn(styles.inputGroup, styles.email)}>
           <Input
@@ -60,7 +60,7 @@ export const FormLogin = ({values, className, ...props}: FormLoginProps): JSX.El
             className={cn(styles.input, styles.email)}
             {...register('email')}
           />
-          <label htmlFor="email" className={styles.label}>Email</label>
+          <label htmlFor="email" className={styles.label}>Пошта</label>
         </div>
         <PasswordIcon className={styles.passwordIcon}/>
         <div className={cn(styles.inputGroup, styles.pas)}>
@@ -72,45 +72,21 @@ export const FormLogin = ({values, className, ...props}: FormLoginProps): JSX.El
             className={styles.input}
             {...register('password')}
           />
-          <label htmlFor="password" className={styles.label}>password</label>
+          <label htmlFor="password" className={styles.label}>Пароль</label>
         </div>
         <Button
           appearence="btnForm"
           className={styles.btn}
-          >Login</Button>
-        <p className={styles.helper}>Don`t have account &nbsp;
+          >Увійти</Button>
+        <p className={styles.helper}>Не маєте акаунта? &nbsp;
           <Link
             href="./register"
             className={styles.helperChild}
           >
-            Sign in
+            Зареєструйтесь
           </Link>
         </p>
       </motion.form>
-      {isSuccess &&
-        <motion.div
-          initial={{opacity: 0}}
-          transition={{ease: 'easeOut', duration: 3}}
-          animate={{opacity: [0, 1, 0]}}
-        >
-          <Alert
-            variants='success'
-            className={styles.alert}>
-            Ви успішно зайшли
-          </Alert>
-        </motion.div>}
-        {isError &&
-          <motion.div
-            initial={{opacity: 1}}
-            transition={{ease: 'easeOut', duration: 3}}
-            animate={{opacity: [0, 1, 0]}}
-          >
-            <Alert
-              variants='bad'
-              className={styles.alert}>
-              {isError}
-            </Alert>
-          </motion.div>}
         </div>
   )
 }

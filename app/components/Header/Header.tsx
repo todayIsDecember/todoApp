@@ -14,7 +14,7 @@ export const Header = async({children, className, ...props}: HeaderProps): Promi
     return (
       <header className={cn(className, styles.header)} {...props}>
         <div className={styles.logo}>Todo App</div>
-        <Link href='../../login' className={styles.signIn}>log In</Link>
+        <Link href='../../login' className={styles.signIn}>Увійти</Link>
       </header>
     )
   }
@@ -22,10 +22,10 @@ export const Header = async({children, className, ...props}: HeaderProps): Promi
   const userInfo = await getUserInfo(token.value)
   return (
     <header className={cn(className, styles.header)} {...props}>
-      <div className={styles.logo}>Todo App</div>
-      <Link href='../../private' className={styles.account}>
+      <Link href={'/'} className={styles.logo}>С/С</Link>
+      <div className={styles.account}>
         <Image className={styles.img} src={API.files.getImage + userInfo?.avatar} fill alt="avatar"/>
-      </Link>
+      </div>
     </header>
   )
 

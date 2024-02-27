@@ -1,0 +1,11 @@
+.textarea {
+  width: 100%;
+  background-color: var(--black);
+  border: none;
+  color: var(--white);
+  border-bottom: 1px solid var(--grey);
+}
+
+.textarea:focus-visible {
+  outline: none;
+}

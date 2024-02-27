@@ -11,7 +11,8 @@ export const Input = forwardRef(({viev='text', error, className, ...props}: Inpu
       className={cn(className, styles.input, {
         [styles.text] : viev == 'text',
         [styles.avatar] : viev == 'avatar',
-        [styles.checkbox] : viev == 'checkbox'
+        [styles.checkbox] : viev == 'checkbox',
+        [styles.radio] : viev == 'radio'
       })}
       {...props}
       ref={ref}

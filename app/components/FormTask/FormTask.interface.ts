@@ -1,4 +1,11 @@
+export enum category {
+  Sport = 'Sport',
+  Study = 'Study',
+  Habbits = 'Habbits'
+}
+
 export interface IFormTask {
   "title": string,
-  "private": boolean
+  "private": boolean,
+  "category":category
 }

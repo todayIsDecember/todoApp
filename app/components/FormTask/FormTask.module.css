@@ -1,6 +1,4 @@
 .form {
-  /* backdrop-filter: blur(100px); */
-  /* border: 1px solid var(--white); */
   background: var(--black);
   border-radius: 15px;
   padding: 20px;
@@ -9,16 +7,18 @@
   display: grid;
   grid-template-columns: 40px 1fr auto;
   gap: 20px;
+  width: 80%;
   grid-template-areas:
   "formTitle formTitle formTitle"
   "title title title"
+  "inputGroup inputGroup inputGroup"
   "private private btn";
 }
 
 .formTitle {
   grid-area: formTitle;
   justify-self: center;
-  font-size: 22px;
+  font-size: 18px;
   background: var(--background-text);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -39,6 +39,7 @@
   grid-area: btn;
 }
 
+
 .checkPrivate {
   grid-area: private;
   display: grid;
@@ -51,3 +52,44 @@
   color: var(--primary);
   font-size: 12px;
 }
+
+.input[type="radio"] {
+  display: none;
+}
+.inputGroup {
+  grid-area: inputGroup;
+  justify-self: start;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.titleCategory {
+  font-size: 12px;
+  background: var(--background-text);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.customRadio {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.customRadio svg {
+  width: 100%;
+  height: 100%;
+  fill: #858d94;
+  display: block;
+  border-radius: 50%;
+}
+
+.input[type="radio"]:checked + .customRadio svg {
+  fill: var(--primary);
+}
+
+
+

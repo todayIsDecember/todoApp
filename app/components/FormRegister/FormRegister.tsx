@@ -21,7 +21,7 @@ export const FormRegister = ({className, ...props}: FormRegisterProps): JSX.Elem
   const [imageUrl, setImageUrl] = useState<string>('')
   const router = useRouter()
 
-  const handleImageUpload = (event) => {
+  const handleImageUpload = (event: any) => {
     const file = event.target.files[0];
     const reader = new FileReader()
 
@@ -84,8 +84,8 @@ export const FormRegister = ({className, ...props}: FormRegisterProps): JSX.Elem
           }}
           >
             <div className={styles.avatar}>
-              <input
-                viev="avatar"
+              <Input
+                viev="text"
                 type="file"
                 multiple
                 id="avatar"
