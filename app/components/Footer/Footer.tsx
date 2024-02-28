@@ -8,8 +8,8 @@ export const Footer = ({children, className, ...props}: FooterProps): JSX.Elemen
     <footer className={cn(className, styles.footer)} {...props}>
       <p
         className={cn(styles.title)}
-      >TodoApp © 2023 - {format(new Date(), 'yyyy')}</p>
-      <p className={styles.desc}>Made by: todayIsDecember</p>
+      >c/c © 2023 - {format(new Date(), 'yyyy')}</p>
+      <p className={styles.desc}>Розроблено: todayIsDecember</p>
     </footer>
   )
 }

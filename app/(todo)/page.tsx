@@ -6,7 +6,7 @@ import { Button } from "../components";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <p className={styles.title}>Вітаю <br />у програмі TodoApp</p>
+      <p className={styles.title}>Вітаю <br />у програмі Список Справ</p>
       <Link href='./todoPage'>
         <Button appearence="btnMain">Почнімо</Button>
       </Link>

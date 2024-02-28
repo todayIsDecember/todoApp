@@ -4,11 +4,14 @@ import { ITask } from '@/interfaces/Task.interface';
 import { Button, Hr, Task } from '@/app/components';
 import Link from 'next/link'
 import { cookies } from 'next/headers'
+import { getUserLikes } from '@/app/API/getUserLikes';
 export default async function TodoPage() {
   const tasks = await getAllTasks()
   const cookieStore = cookies()
   const token = cookieStore.get('token')
   if(token) {
+    const likes = await getUserLikes(token.value)
+
     return (
       <div className={styles.wrapper}>
         <div className={styles.Actions}>
@@ -21,7 +24,7 @@ export default async function TodoPage() {
         </div>
         <Hr/>
       <div className={styles.TasksContainer}>
-        {tasks.map((task: ITask) => <Task task={task} key={task.task_id}/>)}
+        {tasks.map((task: ITask) => <Task task={task} likes={likes} key={task.task_id}/>)}
       </div>
       </div>
     );

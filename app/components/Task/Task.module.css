@@ -1,19 +1,21 @@
+/*основна стилізація задачі*/
+
 .task {
   background: var(--black);
-  border-radius: 15px;
-  padding: 13px;
+  border-radius: 8px;
+  padding: 10px;
   letter-spacing: 0.1em;
   /* box-shadow: 9px 7px 20px var(--black); */
   display: grid;
-  grid-template-columns: 50px auto 1fr 10px;
+  grid-template-columns: 20px 22px auto 1fr;
   gap: 8px;
   align-items: flex-start;
   /* width: 100%; */
   grid-template-areas:
-  "avatar user created flag"
-  "avatar title title title";
+  "avatar avatar user created"
+  "avatar avatar title title "
+  "like likeCount . .";
   transition: 0.5s ease;
-  cursor: pointer;
 }
 
 .user {
@@ -53,13 +55,144 @@
   border-radius: 50%;
 }
 
-.flag {
-  grid-area: flag;
-  width: 10px;
+.like {
+  grid-area: like;
+  cursor: pointer;
 }
 
-.privateFlag {
+.likeCount {
+  grid-area: likeCount;
+  color: var(--grey);
+}
+
+.liked {
   fill: var(--red)
+}
+
+/* стилізація при редагуванні */
+
+.isEditable {
+  grid-template-columns: 60px auto 1fr ;
+  grid-template-areas:
+  "avatar user created"
+  "avatar title title"
+  "edit edit edit";
+}
+
+.edit {
+  grid-area: edit;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas:
+  "switchPrivate private"
+  "switchStatus status"
+  "userLikes userLikes";
+  gap: 10px;
+  font-size: 12px;
+  background: var(--background-text);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-top: 2px solid var(--grey);
+  padding-top: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.switchPrivate {
+  grid-area: switchPrivate;
+}
+
+.private {
+  grid-area: private;
+}
+
+.switchStatus {
+  grid-area: switchStatus;
+}
+
+.status {
+  grid-area: status;
+}
+
+.userLikes {
+  grid-area: userLikes;
+}
+
+.userLikes {
+  display: grid;
+  grid-template-columns: auto auto auto auto ;
+  grid-template-areas:
+  "userLikesTitle userLikesTitle userLikesTitle userLikesTitle";
+  align-items: center;
+  gap: 10px;
+}
+
+.userLikesTitle {
+  grid-area: userLikesTitle;
+}
+
+.done {
+  background: var(--black-light);
+  transform: scale(0.9);
+}
+
+
+.isEditable .imgContainer {
+  height: 60px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--grey);
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--black);
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background: var(--background)
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background: white;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width:600px) {

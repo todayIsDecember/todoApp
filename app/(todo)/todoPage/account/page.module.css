@@ -1,0 +1,73 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  min-height: 100%;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.data {
+  position: relative;
+  border-right: 1px solid var(--black);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 30px;
+  align-items: start;
+  gap: 10px;
+  background: var(--black);
+  padding: 10px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0px 0px 10px var(--black);
+  margin: 20px 0px;
+  left: -300px;
+  opacity: 0;
+  animation-name: showInfo;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+.data div {
+  padding: 5px 7px;
+  background: var(--background-text);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.tasks {
+  position: relative;
+  margin: 20px 0px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  align-content: flex-start;
+  gap: 20px;
+  justify-content: flex-start;
+  opacity: 0;
+  animation-name: showTasks;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+@keyframes showInfo {
+  from {
+    opacity: 0;
+    left: -300px;
+  }
+  to {
+    opacity: 1;
+    left: 0px;
+  }
+}
+
+@keyframes showTasks {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

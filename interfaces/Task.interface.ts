@@ -1,3 +1,5 @@
+import { ILikes } from "./like.interface"
+
 export interface ITask {
 	"task_id": number
 	"title": string
@@ -10,4 +12,5 @@ export interface ITask {
 		"user_name": string
 		"avatar": string
 	}
+	likes: ILikes[]
 }

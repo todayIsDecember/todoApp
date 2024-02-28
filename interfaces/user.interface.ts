@@ -1,6 +1,9 @@
+import { ITask } from "./Task.interface";
+
 export interface IUser {
-  name: string,
+  user_name: string,
   password: string;
   avatar?: string;
-  email: string
+  user_email: string;
+  tasks: ITask[]
 }

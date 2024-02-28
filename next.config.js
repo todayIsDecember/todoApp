@@ -9,8 +9,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "todoserver-phyh.onrender.com",
+        protocol: "http",
+        hostname: "localhost",
       },
     ],
   },

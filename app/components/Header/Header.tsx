@@ -13,7 +13,7 @@ export const Header = async({children, className, ...props}: HeaderProps): Promi
   if(!token) {
     return (
       <header className={cn(className, styles.header)} {...props}>
-        <div className={styles.logo}>Todo App</div>
+        <div className={styles.logo}>С/С</div>
         <Link href='../../login' className={styles.signIn}>Увійти</Link>
       </header>
     )
