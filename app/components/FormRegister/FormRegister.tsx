@@ -43,7 +43,7 @@ export const FormRegister = ({className, ...props}: FormRegisterProps): JSX.Elem
         "email": formDate.email,
         "password": formDate.password,
         "name": formDate.name,
-        "avatar":formDate.avatar.length == 1 ? `${formDate.avatar[0].name.split('.')[0]}.webp` : 'default.webp'
+        "avatar":formDate.avatar.length ? `${formDate.avatar[0].name.split('.')[0]}.webp` : 'default.webp'
       }),
       headers: {'Content-Type': 'application/json'}
     })
