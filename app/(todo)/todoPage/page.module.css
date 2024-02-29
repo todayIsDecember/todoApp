@@ -23,3 +23,42 @@
   gap: 20px;
 }
 
+@media (max-width: 1200px) {
+  .TasksContainer {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+
+@media (max-width: 1000px) {
+  .TasksContainer {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media (max-width: 800px) {
+  .TasksContainer {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: 500px) {
+  .TasksContainer {
+    grid-template-columns: auto;
+  }
+
+  .Actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px;
+    background: var(--black-light);
+    box-shadow: 0px -5px 20px var(--black);
+    border-radius: 10px;
+    margin: 20px 5px;
+    z-index: 999;
+    justify-content: center;
+    /* gap: 10px; */
+  }
+}
+

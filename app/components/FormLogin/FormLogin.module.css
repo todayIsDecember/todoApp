@@ -100,15 +100,3 @@
   top: 80px;
   right: 10px;
 }
-
-@media (max-width: 550px) {
-  .form {
-    width: 250px;
-  }
-}
-
-@media (max-width: 410px) {
-  .form {
-    width: 200px;
-  }
-}

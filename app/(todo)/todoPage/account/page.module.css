@@ -71,3 +71,34 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 1600px) {
+  .tasks {
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 1300px) {
+  .tasks {
+    grid-template-columns: repeat(2, auto);
+  }
+
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .data {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .tasks {
+    grid-template-columns: auto;
+  }
+}

@@ -94,8 +94,6 @@
   -webkit-text-fill-color: transparent;
   border-top: 2px solid var(--grey);
   padding-top: 10px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
 }
 
 .switchPrivate {
@@ -193,32 +191,4 @@ input:checked + .slider:before {
 
 .hidden {
   display: none;
-}
-
-@media (max-width:600px) {
-  .task {
-    grid-template-columns: 30px auto 1fr auto;
-    padding: 10px;
-  }
-
-  .user {
-    font-size: 6px;
-  }
-
-  .title {
-    font-size: 8px;
-  }
-
-  .created {
-    font-size: 4px;
-  }
-
-  .img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .flag {
-    width: 10px;
-  }
 }
