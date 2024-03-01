@@ -108,13 +108,14 @@
 
 .avatar {
   border: 1px solid var(--primary);
+  border-radius: 50%;
     display: inline-block;
-    padding: 6px 12px;
+    padding: 12px 12px;
     cursor: pointer;
 }
 
 .imgPreload {
-  border-radius: 10px;
+  border-radius: 50%;
   position: relative;
   left: calc(50% - 25px);
 }
