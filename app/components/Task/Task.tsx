@@ -32,7 +32,7 @@ export const Task = ({task, likes = [], isEditable = false ,className, ...props}
       setIsLiked(true)
     }
 
-  }, [])
+  }, [likes, task.task_id])
 
   const changePrivate = () => {
     setIsPrivate(!isPrivate)
@@ -71,7 +71,7 @@ export const Task = ({task, likes = [], isEditable = false ,className, ...props}
       <p className={styles.title}>{task.title}</p>
       <p className={styles.created}>{task.created}</p>
       <div className={styles.imgContainer}>
-        <Image className={styles.img} src={API.files.getImage + task.users.avatar} fill alt="avatar"/>
+        <Image className={styles.img} src={API.files.getImage + task.users.avatar} height={40} width={40} alt="avatar"/>
       </div>
       <LikeSvg className={cn(styles.like, {[styles.liked]: isLiked, [styles.hidden]: isEditable})} onClick={() => changeLike()}/>
       <div className={cn(styles.likeCount, {[styles.hidden]: isEditable})}>{task.likes?.length + clickedOnLike}</div>

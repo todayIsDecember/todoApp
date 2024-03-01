@@ -24,7 +24,7 @@ export const Header = async({children, className, ...props}: HeaderProps): Promi
     <header className={cn(className, styles.header)} {...props}>
       <Link href={'/'} className={styles.logo}>С/С</Link>
       <div className={styles.account}>
-        <Image className={styles.img} src={API.files.getImage + userInfo?.avatar} fill alt="avatar"/>
+        <Image className={styles.img} src={API.files.getImage + userInfo?.avatar} height={35} width={35} alt="avatar"/>
       </div>
     </header>
   )

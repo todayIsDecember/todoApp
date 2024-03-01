@@ -5,12 +5,10 @@
   border-radius: 8px;
   padding: 10px;
   letter-spacing: 0.1em;
-  /* box-shadow: 9px 7px 20px var(--black); */
   display: grid;
   grid-template-columns: 20px 22px auto 1fr;
   gap: 8px;
   align-items: flex-start;
-  /* width: 100%; */
   grid-template-areas:
   "avatar avatar user created"
   "avatar avatar title title "
@@ -191,4 +189,10 @@ input:checked + .slider:before {
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 1400px) {
+ .imgContainer {
+  height: 50px;
+ }
 }
