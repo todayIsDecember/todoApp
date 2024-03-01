@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { IFormRegister } from "./FormRegister.interface";
 import  Link  from 'next/link'
 import { motion } from 'framer-motion'
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import { API } from "@/helpers/api";
 import EmailIcon from '../../../public/email.svg'
@@ -19,22 +19,31 @@ import Image from 'next/image'
 export const FormRegister = ({className, ...props}: FormRegisterProps): JSX.Element => {
   const {register, handleSubmit, reset, formState: {errors}} = useForm<IFormRegister>();
   const [imageUrl, setImageUrl] = useState<string>('')
+  const [image, setImage] = useState<File>(new File([], ''))
   const router = useRouter()
 
-  const handleImageUpload = (event: any) => {
-    const file = event.target.files[0];
-    const reader = new FileReader()
+  const handleImageUpload = (changeEvent:any) => {
+    const image = changeEvent.target.files[0];
 
-    reader.onload = (event) => {
-      const imageUrl = event.target?.result;
-      if(typeof imageUrl === 'string') {
-      setImageUrl(imageUrl)
-      }
+    setImage(image)
+
+    if(image) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const result = reader.result;
+        if(result && typeof result === 'string') {
+          setImageUrl(reader.result as string)
+        }else {
+          setImageUrl(reader.result as string)
+        }
+      };
+      reader.readAsDataURL(image)
     }
-    reader.readAsDataURL(file)
   }
 
   const onSubmit = async (formDate: IFormRegister) => {
+    formDate.avatar = image
+
 
     try {
       const res = await fetch(API.auth.register, {
@@ -43,16 +52,12 @@ export const FormRegister = ({className, ...props}: FormRegisterProps): JSX.Elem
         "email": formDate.email,
         "password": formDate.password,
         "name": formDate.name,
-        "avatar":`${formDate.avatar[0].name.split('.')[0]}.webp`
+        "avatar":`${formDate.avatar.name.split('.')[0]}.webp`
       }),
       headers: {'Content-Type': 'application/json'}
     })
-    if(formDate.avatar.length == 0) {
-      router.push('./register/welcomePage')
-      return;
-    }
     const date = new FormData();
-    date.append('files', formDate.avatar[0], formDate.avatar[0].name)
+    date.append('files', formDate.avatar, formDate.avatar.name)
 
     await fetch(API.files.uploadImage, {
       method: 'POST',
