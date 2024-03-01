@@ -83,18 +83,18 @@ export const FormRegister = ({className, ...props}: FormRegisterProps): JSX.Elem
             scale: 1.03
           }}
           >
-            <div className={styles.avatar}>
+            <label className={styles.avatar}>
               <Input
-                viev="text"
+                viev="avatar"
                 type="file"
                 id="avatar"
                 className={cn(styles.avatar)}
                 {...register('avatar')}
                 onChange={handleImageUpload}
-                accept="image/*"
+                // accept="image/*"
               />
-              {imageUrl && <Image src={imageUrl} alt="uploaded" width={50} height={50}/>}
-            </div>
+              {imageUrl && <Image src={imageUrl} alt="uploaded" width={50} height={50} className={styles.imgPreload}/>}
+            </label>
         </motion.div>
         <EmailIcon className={styles.emailIcon}/>
         <div className={cn(styles.inputGroup, styles.email)}>
