@@ -10,7 +10,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "todoserver-onv1.onrender.com",
+        hostname: "todoserver-1.onrender.com",
       },
     ],
   },

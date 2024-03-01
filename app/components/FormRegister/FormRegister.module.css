@@ -100,15 +100,10 @@
   -webkit-text-fill-color: transparent;
 }
 
-.alert {
-  position: fixed;
-  top: 80px;
-  right: 10px;
-}
-
 .avatar {
   border: 1px solid var(--primary);
   border-radius: 50%;
+  content: "Аватор";
     display: inline-block;
     padding: 12px 12px;
     cursor: pointer;

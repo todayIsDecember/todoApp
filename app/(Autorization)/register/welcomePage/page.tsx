@@ -12,7 +12,7 @@ export default function Autorization() {
     <div className={styles.wrapper}>
       <p className={styles.title}>Вітаю, ви успішно зареєструвались</p>
       <p className={styles.subtitle}>Зараз ви зможете пройти авторизацію</p>
-      <Link href='../login'><Button appearence="btnMain">login</Button></Link>
+      <Link href='../login'><Button appearence="btnMain">Авторизуватися</Button></Link>
     </div>
   )
 }

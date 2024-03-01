@@ -7,10 +7,7 @@ import cn from 'classnames'
 export const Alert = ({variants, children, className, ...props}: AlertProps):JSX.Element => {
   return (
     <div
-      className={cn(className, styles.alert, {
-        [styles.success]: variants == 'success',
-        [styles.bad]: variants == 'bad'
-      })}
+      className={cn(className, styles.alert)}
       {...props}
     >
       {children}

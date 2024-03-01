@@ -50,6 +50,7 @@
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
   animation-duration: 0.5s;
+  padding: 30px;
 }
 
 @keyframes showInfo {

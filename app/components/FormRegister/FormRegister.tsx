@@ -20,6 +20,7 @@ export const FormRegister = ({className, ...props}: FormRegisterProps): JSX.Elem
   const {register, handleSubmit, reset, formState: {errors}} = useForm<IFormRegister>();
   const [imageUrl, setImageUrl] = useState<string>('')
   const [image, setImage] = useState<File>(new File([], ''))
+  const [isError, setIsError] = useState<string>()
   const router = useRouter()
 
   const handleImageUpload = (changeEvent:any) => {
@@ -52,12 +53,22 @@ export const FormRegister = ({className, ...props}: FormRegisterProps): JSX.Elem
         "email": formDate.email,
         "password": formDate.password,
         "name": formDate.name,
-        "avatar":`${formDate.avatar.name.split('.')[0]}.webp`
+        "avatar":formDate.avatar.name? `${formDate.avatar.name.split('.')[0]}.webp`: undefined
       }),
       headers: {'Content-Type': 'application/json'}
     })
     const date = new FormData();
     date.append('files', formDate.avatar, formDate.avatar.name)
+
+    const data = await res.json();
+    if(data.message) {
+      setIsError(data.message)
+      setTimeout(() => {
+        setIsError('')
+      }, 3000)
+      return;
+    }
+
 
     await fetch(API.files.uploadImage, {
       method: 'POST',
@@ -66,7 +77,7 @@ export const FormRegister = ({className, ...props}: FormRegisterProps): JSX.Elem
       router.push('./register/welcomePage')
     }
     catch (e: any) {
-      console.log(e);
+      setIsError(e.message)
     }
 
   }
@@ -105,7 +116,7 @@ export const FormRegister = ({className, ...props}: FormRegisterProps): JSX.Elem
         <div className={cn(styles.inputGroup, styles.email)}>
           <Input
             viev="text"
-            type="text"
+            type="email"
             id="email"
             required
             className={cn(styles.email)}
@@ -142,6 +153,7 @@ export const FormRegister = ({className, ...props}: FormRegisterProps): JSX.Elem
           className={styles.btn}
           >Sign In</Button>
       </motion.form>
+      {isError && <Alert variants='bad'>{isError}</Alert>}
     </div>
   )
 }

@@ -3,22 +3,22 @@
 .task {
   background: var(--black);
   border-radius: 8px;
-  padding: 10px;
+  padding: 15px;
   letter-spacing: 0.1em;
   display: grid;
   grid-template-columns: 20px 22px auto 1fr;
   gap: 8px;
-  align-items: flex-start;
+  align-items: center;
   grid-template-areas:
   "avatar avatar user created"
   "avatar avatar title title "
-  "like likeCount . .";
+  "like likeCount title title";
   transition: 0.5s ease;
 }
 
 .user {
   grid-area: user;
-  font-size: 10px;
+  font-size: 13px;
   color: var(--white);
   margin: 0;
 }
@@ -30,13 +30,14 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0;
-  font-size: 10px;
+  font-size: 16px;
 }
 
 .created {
   grid-area: created;
-  color: rgb(143, 142, 142);
-  font-size: 6px;
+  color: var(--grey-light);
+  font-size: 10px;
+  justify-self: end;
   margin: 0;
 }
 
@@ -86,12 +87,11 @@
   "switchStatus status"
   "userLikes userLikes";
   gap: 10px;
-  font-size: 12px;
-  background: var(--background-text);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 14px;
   border-top: 2px solid var(--grey);
+  justify-content: center;
   padding-top: 10px;
+  color: var(--grey-light);
 }
 
 .switchPrivate {

@@ -16,8 +16,7 @@ import PasswordIcon from '../../../public/password.svg'
 
 export const FormLogin = ({values, className, ...props}: FormLoginProps): JSX.Element => {
   const {register, handleSubmit, reset, formState: {errors}} = useForm<IFormLogin>()
-  const [isSuccess, setIsSuccess] = useState<boolean>(false);
-  const [isError, setIsError] = useState<string>()
+  const [isError, setIsError] = useState<string>('')
   const router = useRouter()
 
   const onSubmit = async (formDate: IFormLogin) => {
@@ -32,6 +31,13 @@ export const FormLogin = ({values, className, ...props}: FormLoginProps): JSX.El
       })
 
       const data = await res.json();
+      if(data.message) {
+        setIsError(data.message);
+        setTimeout(() => {
+          setIsError('')
+        }, 3000)
+        return;
+      }
       document.cookie = `token=${data.access_token}; path=/;`
       router.push('/todoPage')
     } catch (error) {
@@ -54,7 +60,7 @@ export const FormLogin = ({values, className, ...props}: FormLoginProps): JSX.El
         <div className={cn(styles.inputGroup, styles.email)}>
           <Input
             viev="text"
-            type="text"
+            type="email"
             id="email"
             required
             className={cn(styles.input, styles.email)}
@@ -87,6 +93,7 @@ export const FormLogin = ({values, className, ...props}: FormLoginProps): JSX.El
           </Link>
         </p>
       </motion.form>
-        </div>
+      {isError && <Alert variants="bad" className={styles.alert}>{isError}</Alert>}
+    </div>
   )
 }
